@@ -1,0 +1,32 @@
+.base-grid {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  display: grid;
+  grid-template-columns: repeat(20, 46px);
+  grid-template-rows: repeat(20, 48px);
+  gap: 0 4px;
+  background: black;
+  z-index: -1; 
+}
+
+.grid {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: grid;
+  grid-template-columns: repeat(20, 46px);
+  grid-template-rows: repeat(20, 48px);
+  gap: 0 4px;
+}
+
+.test-grid {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 46px);
+  grid-template-rows: repeat(3, 48px);
+  gap: 0 4px;
+  z-index: 2;
+}
