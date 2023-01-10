@@ -19,6 +19,7 @@ export interface CellProps {
   outline?: string
   outlineOffset?: string
   width?: string
+  zIndex?: string
 }
 
 const Cell: FC<CellProps> = (props) => {
@@ -42,6 +43,7 @@ const Item = styled.div<CellProps>`
   outline: ${({outline}) => outline};
   outline-offset: ${({outlineOffset}) => outlineOffset};
   width: ${({width}) => width};
+  z-index: ${({zIndex}) => zIndex};
 `
 
 export default Cell

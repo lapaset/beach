@@ -22,11 +22,10 @@
 .test-grid {
   position: absolute;
   top: 18px;
-  left: 70px;
+  left: 66px;
   display: grid;
-  grid-template-columns: repeat(3, 46px);
-  grid-template-rows: repeat(3, 48px);
+  grid-template-columns: repeat(3, 52px);
+  grid-template-rows: repeat(2, 48px) 47px;
   gap: 0 4px;
-  z-index: 2;
   overflow: hidden;
 }

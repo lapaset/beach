@@ -23,10 +23,11 @@ const testCells = [
       borderRadius: "90%",
       gridColumn: "1 / 4",
       gridRow: "1 / 4",
-      marginTop: "-2",
-      marginLeft: "-150px",
-      width: "300px",
-      height: "300px"
+      marginTop: "0",
+      marginLeft: "-148px",
+      width: "302px",
+      height: "300px",
+      zIndex: "4"
     }
   }
 ]
@@ -41,11 +42,14 @@ const shapes: Shape[] = [
   {
     name: "topRightRounded",
     item: {
+      borderLeft: "4px solid black",
       borderRight: "4px solid black",
       borderTop: "4px solid black",
       borderRadius: "0 90% 0 0",
-      marginTop: "-2px",
-      width: "50px"
+      marginTop: "-4px",
+      marginLeft: "-4px",
+      width: "54px",
+      zIndex: "1"
     },
     next: {
     },
@@ -55,21 +59,28 @@ const shapes: Shape[] = [
     name: "topLeftRounded",
     item: {
       borderLeft: "4px solid black",
+      borderRight: "4px solid black",
       borderTop: "4px solid black",
       borderRadius: "90% 0 0 0",
-      width: "50px",
-      marginTop: "-2px",
-      marginLeft: "-4px"
+      width: "54px",
+      marginTop: "-4px",
+      marginLeft: "-4px",
+      zIndex: "1"
     },
     next: {
     },
     previous: {}
   },
   {
-    name: "topBorder",
+    name: "horizontalCell",
     item: {
+      borderBottom: "4px solid black",
       borderTop: "4px solid black",
-      marginTop: "-2px",
+      marginLeft: "-4px",
+      marginTop: "-4px",
+      width: "54px",
+      height: "52px",
+      zIndex: "0"
     },
     next: {
     },
