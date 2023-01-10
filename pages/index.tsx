@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import Cell, { CellProps } from '../components/Cell/Cell'
+import { CellProps } from '../components/Cell/Cell'
 import Grid from '../components/Grid/Grid'
 import styles from '../styles/Home.module.css'
 
@@ -26,7 +26,7 @@ const testCells = [
       marginTop: "0",
       marginLeft: "-148px",
       width: "302px",
-      height: "300px",
+      height: "302px",
       zIndex: "4"
     }
   }
@@ -42,7 +42,7 @@ const shapes: Shape[] = [
   {
     name: "topRightRounded",
     item: {
-      borderLeft: "4px solid black",
+      background: "transparent",
       borderRight: "4px solid black",
       borderTop: "4px solid black",
       borderRadius: "0 90% 0 0",
@@ -58,13 +58,43 @@ const shapes: Shape[] = [
   {
     name: "topLeftRounded",
     item: {
+      background: "transparent",
       borderLeft: "4px solid black",
-      borderRight: "4px solid black",
       borderTop: "4px solid black",
       borderRadius: "90% 0 0 0",
       width: "54px",
       marginTop: "-4px",
       marginLeft: "-4px",
+      zIndex: "1"
+    },
+    next: {
+    },
+    previous: {}
+  },
+  {
+    name: "bottomRightRounded",
+    item: {
+      background: "transparent",
+      borderRight: "4px solid black",
+      borderBottom: "4px solid black",
+      borderRadius: "0 0 90% 0",
+      marginLeft: "-4px",
+      width: "54px",
+      zIndex: "1"
+    },
+    next: {
+    },
+    previous: {}
+  },
+  {
+    name: "bottomLeftRounded",
+    item: {
+      background: "transparent",
+      borderLeft: "4px solid black",
+      borderBottom: "4px solid black",
+      borderRadius: "0 0 0 90%",
+      marginLeft: "-4px",
+      width: "54px",
       zIndex: "1"
     },
     next: {
@@ -91,7 +121,7 @@ const shapes: Shape[] = [
 const isBorderColumn = (i: number) => (i + 1) % 20 === 0 ||( i + 1) % 20 === 1 
 
 const randomWithProbability = () =>{
-  var notRandomNumbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3];
+  var notRandomNumbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 3, 4, 5, 5, 5, 5];
   var idx = Math.floor(Math.random() * notRandomNumbers.length);
   return notRandomNumbers[idx];
 }
@@ -112,7 +142,7 @@ export default function Home() {
       <main className={styles.main}>
         <Grid className="base-grid">
           {cells.map((i, index) =>
-            (<Cell key={`base-${index}`}/>))}
+            (<DynamicCell key={`base-${index}`}/>))}
         </Grid>
         <Grid className="grid">
           {cells.map((i, index) => {
