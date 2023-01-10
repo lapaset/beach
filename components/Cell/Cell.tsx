@@ -16,6 +16,8 @@ export interface CellProps {
   marginLeft?: string
   marginRight?: string
   marginTop?: string
+  outline?: string
+  outlineOffset?: string
   width?: string
 }
 
@@ -37,6 +39,8 @@ const Item = styled.div<CellProps>`
   margin-left: ${({marginLeft}) => marginLeft};
   margin-right: ${({marginRight}) => marginRight};
   margin-top: ${({marginTop}) => marginTop};
+  outline: ${({outline}) => outline};
+  outline-offset: ${({outlineOffset}) => outlineOffset};
   width: ${({width}) => width};
 `
 

@@ -13,29 +13,20 @@ interface Shape {
 
 const testCells = [
   {
-    name: "topRightRounded",
+    name: "topRightRounded3x3",
     item: {
-      background: "white",
-      borderRight: "4px solid black",
-      borderTop: "4px solid black",
-      borderRadius: "0 90% 0 0",
-      gridColumn: "2 / 5",
+      background: "transparent",
+      borderRight: "54px solid black",
+      borderTop: "54px solid black",
+      outline: "46px solid white",
+      outlineOffset: "-50px",
+      borderRadius: "90%",
+      gridColumn: "1 / 4",
       gridRow: "1 / 4",
-      marginTop: "-2px",
-      width: "150px"
-    }
-  },
-  {
-    name: "topRightRounded",
-    item: {
-      borderRight: "4px solid black",
-      borderTop: "4px solid black",
-      borderRadius: "0 90% 0 0",
-      gridColumn: "2 / 4",
-      gridRow: "2 / 4",
-      marginTop: "-2px",
-      width: "100px",
-      zIndex: "200" 
+      marginTop: "-2",
+      marginLeft: "-150px",
+      width: "300px",
+      height: "300px"
     }
   }
 ]

@@ -7,7 +7,6 @@
   grid-template-rows: repeat(20, 48px);
   gap: 0 4px;
   background: black;
-  z-index: -1; 
 }
 
 .grid {
@@ -22,11 +21,12 @@
 
 .test-grid {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 18px;
+  left: 70px;
   display: grid;
-  grid-template-columns: repeat(4, 46px);
+  grid-template-columns: repeat(3, 46px);
   grid-template-rows: repeat(3, 48px);
   gap: 0 4px;
   z-index: 2;
+  overflow: hidden;
 }
