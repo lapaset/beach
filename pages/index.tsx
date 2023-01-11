@@ -16,17 +16,17 @@ const testCells = [
     name: "topRightRounded3x3",
     item: {
       background: "transparent",
-      borderRight: "54px solid black",
-      borderTop: "54px solid black",
-      outline: "46px solid white",
-      outlineOffset: "-50px",
+      borderRight: "52px solid black",
+      borderTop: "52px solid black",
+      outline: "44px solid white",
+      outlineOffset: "-48px",
       borderRadius: "90%",
       gridColumn: "1 / 4",
       gridRow: "1 / 4",
       marginTop: "0",
       marginLeft: "-148px",
-      width: "302px",
-      height: "302px",
+      width: "296px",
+      height: "296px",
       zIndex: "4"
     }
   }
@@ -48,7 +48,8 @@ const shapes: Shape[] = [
       borderRadius: "0 90% 0 0",
       marginTop: "-4px",
       marginLeft: "-4px",
-      width: "54px",
+      width: "52px",
+      height: "52px",
       zIndex: "1"
     },
     next: {
@@ -62,7 +63,8 @@ const shapes: Shape[] = [
       borderLeft: "4px solid black",
       borderTop: "4px solid black",
       borderRadius: "90% 0 0 0",
-      width: "54px",
+      width: "52px",
+      height: "52px",
       marginTop: "-4px",
       marginLeft: "-4px",
       zIndex: "1"
@@ -78,8 +80,10 @@ const shapes: Shape[] = [
       borderRight: "4px solid black",
       borderBottom: "4px solid black",
       borderRadius: "0 0 90% 0",
+      marginTop: "-4px",
       marginLeft: "-4px",
-      width: "54px",
+      width: "52px",
+      height: "52px",
       zIndex: "1"
     },
     next: {
@@ -93,8 +97,10 @@ const shapes: Shape[] = [
       borderLeft: "4px solid black",
       borderBottom: "4px solid black",
       borderRadius: "0 0 0 90%",
+      marginTop: "-4px",
       marginLeft: "-4px",
-      width: "54px",
+      width: "52px",
+      height: "52px",
       zIndex: "1"
     },
     next: {
@@ -108,7 +114,7 @@ const shapes: Shape[] = [
       borderTop: "4px solid black",
       marginLeft: "-4px",
       marginTop: "-4px",
-      width: "54px",
+      width: "52px",
       height: "52px",
       zIndex: "0"
     },

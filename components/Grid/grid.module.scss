@@ -1,9 +1,9 @@
 .base-grid {
   position: absolute;
-  top: 18px;
+  top: 16px;
   left: 20px;
   display: grid;
-  grid-template-columns: repeat(20, 46px);
+  grid-template-columns: repeat(20, 44px);
   grid-template-rows: repeat(20, 48px);
   gap: 0 4px;
   background: black;
@@ -14,18 +14,18 @@
   top: 20px;
   left: 20px;
   display: grid;
-  grid-template-columns: repeat(20, 46px);
+  grid-template-columns: repeat(20, 44px);
   grid-template-rows: repeat(20, 48px);
   gap: 0 4px;
 }
 
 .test-grid {
   position: absolute;
-  top: 18px;
-  left: 66px;
+  top: 16px;
+  left: 64px;
   display: grid;
-  grid-template-columns: repeat(3, 52px);
-  grid-template-rows: repeat(2, 48px) 47px;
+  grid-template-columns: repeat(3, 47px);
+  grid-template-rows: repeat(3, 48px);
   gap: 0 4px;
   overflow: hidden;
 }
