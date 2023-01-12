@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export interface ItemProps {
   background?: string
+  border?: string
   borderBottom?: string
   borderLeft?: string
   borderRight?: string
@@ -26,6 +27,7 @@ const Item: FC<ItemProps> = props => <ItemDiv {...props} />
 const ItemDiv = styled.div<ItemProps>`
   position: relative;
   background: ${({ background }) => background};
+  border: ${({border}) => border};
   border-bottom: ${({ borderBottom }) => borderBottom};
   border-left: ${({ borderLeft }) => borderLeft};
   border-radius: ${({ borderRadius }) => borderRadius};
