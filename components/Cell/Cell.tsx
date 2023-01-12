@@ -12,6 +12,12 @@ const CellDiv = styled.div`
   width: 100%;
   background: white;
   position: relative;
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      background: black;
+    }
+  }
 `
 
 export default Cell

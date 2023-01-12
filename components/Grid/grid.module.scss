@@ -8,4 +8,10 @@
   background: black;
   z-index: -1;
   overflow: hidden;
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      background: white;
+    }
+  }
 }

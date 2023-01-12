@@ -21,8 +21,7 @@ const shapes: Shape[] = [
     probability: 2,
     item: {
       background: 'transparent',
-      borderRight: '4px solid black',
-      borderTop: '4px solid black',
+      borderWidth: '4px 4px 0 0',
       borderRadius: '0 90% 0 0',
       marginLeft: '-4px',
       marginTop: '-4px',
@@ -36,8 +35,7 @@ const shapes: Shape[] = [
     probability: 1,
     item: {
       background: 'transparent',
-      borderLeft: '4px solid black',
-      borderTop: '4px solid black',
+      borderWidth: '4px 0 0 4px',
       borderRadius: '90% 0 0 0',
       marginLeft: '-4px',
       marginTop: '-4px',
@@ -51,9 +49,8 @@ const shapes: Shape[] = [
     probability: 2,
     item: {
       background: 'transparent',
-      borderRight: '4px solid black',
-      borderBottom: '4px solid black',
       borderRadius: '0 0 90% 0',
+      borderWidth: '0 4px 4px 0',
       marginLeft: '-4px',
       marginTop: '-4px',
       width: '52px',
@@ -66,9 +63,8 @@ const shapes: Shape[] = [
     probability: 1,
     item: {
       background: 'transparent',
-      borderLeft: '4px solid black',
-      borderBottom: '4px solid black',
       borderRadius: '0 0 0 90%',
+      borderWidth: '0 0 4px 4px',
       marginLeft: '-4px',
       marginTop: '-4px',
       width: '52px',
@@ -81,8 +77,7 @@ const shapes: Shape[] = [
     probability: 4,
     item: {
       background: 'white',
-      borderBottom: '4px solid black',
-      borderTop: '4px solid black',
+      borderWidth: '4px 0',
       marginLeft: '-4px',
       marginTop: '-4px',
       width: '52px',
