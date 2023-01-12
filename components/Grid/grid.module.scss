@@ -1,4 +1,5 @@
 .base-grid {
+  padding: 4px;
   position: absolute;
   display: grid;
   grid-template-columns: repeat(20, 44px);
@@ -6,16 +7,5 @@
   gap: 0 4px;
   background: black;
   z-index: -1;
-  border: 4px solid black;
-}
-
-.test-grid {
-  position: absolute;
-  top: 16px;
-  left: 64px;
-  display: grid;
-  grid-template-columns: repeat(3, 47px);
-  grid-template-rows: repeat(3, 48px);
-  gap: 0 4px;
   overflow: hidden;
 }
