@@ -48,9 +48,9 @@ const GridDiv = styled.div`
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(20, 16.5px);
-    grid-template-rows: repeat(39, 18px) 16.5px;
-    gap: 0 1.5px;
-    padding: 1.5px;
+    grid-template-columns: repeat(20, 22px);
+    grid-template-rows: repeat(39, 24px) 22px;
+    gap: 0 2px;
+    padding: 2px;
   }
 `
