@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 const Home = () => {
-  const DynamicGrid = dynamic(() => import('../components/Grid/Grid'), {ssr: false})
+  const DynamicGrid = dynamic(() => import('../components/RandomisedGrid/RandomisedGrid'), {ssr: false})
 
   return (
     <>

@@ -1,31 +1,11 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
-import { useIsMobile } from '../../hooks/useIsMobile'
-import {
-  createShapePropablityArray,
-  randomWithProbability
-} from '../../utils/randomise'
-import { getShapes } from '../../utils/shapes'
-import Cell from '../Cell/Cell'
-import Item from '../Item/Item'
 
-const Grid: FC = () => {
-  const isMobile = useIsMobile()
-  const shapes = getShapes(isMobile)
-
-  const cells = Array.from({ length: isMobile ? 800 : 400 }, (_, i) => i).map(
-    () => shapes[randomWithProbability(createShapePropablityArray(shapes))]
-  )
-
-  return (
-    <GridDiv>
-      {cells.map((i, index) => (
-        <Cell key={`base-${index}`}>
-          <Item {...i.item} />
-        </Cell>
-      ))}
-    </GridDiv>
-  )
+interface Props {
+  children: ReactNode
+}
+const Grid: FC<Props> = ({ children }) => {
+  return <GridDiv>{children}</GridDiv>
 }
 
 export default Grid
