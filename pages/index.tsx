@@ -1,9 +1,17 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styled from 'styled-components'
 
 const Home = () => {
-  const DynamicGrid = dynamic(() => import('../components/RandomisedGrid/RandomisedGrid'), {ssr: false})
+  const DynamicGrid = dynamic(
+    () => import('../components/RandomisedGrid/RandomisedGrid'),
+    { ssr: false }
+  )
+
+  const DynamicHeader = dynamic(
+    () => import('../components/Header/Header'),
+    { ssr: false }
+  )
 
   return (
     <>
@@ -13,11 +21,18 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
       </Head>
-      <main className={styles.main}>
+      <Main>
+        <DynamicHeader />
         <DynamicGrid />
-      </main>
+      </Main>
     </>
   )
 }
+
+const Main = styled.main`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`
 
 export default Home
