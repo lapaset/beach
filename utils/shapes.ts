@@ -7,8 +7,8 @@ export interface Shape {
 }
 
 export const getShapes = (isMobile: boolean): Shape[] => {
-  const border = isMobile ? '1.5px' : '4px'
-  const cell = isMobile ? '19.5px' : '52px'
+  const border = isMobile ? '2px' : '4px'
+  const cell = isMobile ? '26px' : '52px'
 
   return [
     {
