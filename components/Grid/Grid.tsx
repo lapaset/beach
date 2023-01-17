@@ -2,13 +2,17 @@ import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 
 interface Props {
+  cellInner: number
+  cellWithBorder: number
+  cellWithBorders: number
   children: ReactNode
+  columns: number
+  gap: number
   rows: number
-  mobileRows: number
 }
 
-const Grid: FC<Props> = (props) => {
-  const {children, ...rest} = props
+const Grid: FC<Props> = props => {
+  const { children, ...rest } = props
   return <GridDiv {...rest}>{children}</GridDiv>
 }
 
@@ -16,10 +20,12 @@ export default Grid
 
 const GridDiv = styled.div<Omit<Props, 'children'>>`
   display: grid;
-  position: absolute;
-  grid-template-columns: repeat(20, 44px);
-  grid-template-rows: ${({rows}) => `repeat(${rows - 1}, 48px) 44px`};
-  gap: 0 4px;
+  position: relative;
+  grid-template-columns: ${({ cellInner, columns }) =>
+    `repeat(${columns}, ${cellInner}px)`};
+  grid-template-rows: ${({ cellWithBorder, cellWithBorders, rows }) =>
+    `${cellWithBorders}px repeat(${rows - 1}, ${cellWithBorder}px)`};
+  gap: ${({gap}) => `0 ${gap}px`};
   background: black;
   z-index: -1;
   overflow: hidden;
@@ -28,11 +34,5 @@ const GridDiv = styled.div<Omit<Props, 'children'>>`
     & {
       background: white;
     }
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(20, 22px);
-    grid-template-rows: ${({mobileRows}) => `repeat(${mobileRows - 1}, 24px) 22px`};
-    gap: 0 2px;
   }
 `

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { MOBILE_BREAKPOINT } from '../utils/constants'
 
 export const useIsMobile = () => {
   const [width, setWidth] = useState<number>(window.innerWidth)
@@ -18,5 +19,5 @@ export const useIsMobile = () => {
     }
   }, [])
 
-  return width <= 768
+  return width <= MOBILE_BREAKPOINT
 }

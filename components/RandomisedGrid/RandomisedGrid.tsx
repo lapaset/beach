@@ -14,28 +14,26 @@ import Item from '../Item/Item'
 const RandomisedGrid: FC = () => {
   const isMobile = useIsMobile()
   const shapes = getShapes(isMobile)
+  const constants = isMobile ? mobile : desktop
+  const { cells, ...rest } = constants
 
-  const cells = Array.from({ length: isMobile ? 800 : 400 }, (_, i) => i).map(
-    (_, i) => i < 20 ? shapes[randomWithProbability([0, 0, 0, 0, 3, 4, 5])] : shapes[randomWithProbability(createShapePropablityArray(shapes))]
+  const cellArray = Array.from({ length: cells }, (_, i) => i).map(
+    () => shapes[randomWithProbability(createShapePropablityArray(shapes))]
   )
 
-  const constants = isMobile ? mobile : desktop
-  const { border, headerRows, cellWithBorder } = constants
-
   return (
-    <GridDiv rows={20} mobileRows={40} border={border} headerHeight={headerRows * cellWithBorder}>
-      {cells.map((i, index) => (
+    <GridDiv {...rest}>
+      {cellArray.map((i, index) => (
         <Cell key={`base-${index}`}>
-          <Item {...i.item} />
+          <Item {...i.item} isFirstRow={index < rest.columns} />
         </Cell>
       ))}
     </GridDiv>
   )
 }
 
-const GridDiv = styled(Grid)<{ border: number, headerHeight: number }>`
-  top: ${({ headerHeight }) => `${headerHeight}px`};
-  padding: ${({ border }) => `0 ${border}px ${border}px`};
+const GridDiv = styled(Grid)<{ border: number }>`
+  padding: ${({ border }) => `0 ${border}px`};
 `
 
 export default RandomisedGrid
