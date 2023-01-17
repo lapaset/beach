@@ -8,11 +8,6 @@ const Home = () => {
     { ssr: false }
   )
 
-  const DynamicHeader = dynamic(
-    () => import('../components/Header/Header'),
-    { ssr: false }
-  )
-
   return (
     <>
       <Head>
@@ -20,10 +15,22 @@ const Home = () => {
         <meta name="description" content="🌴 created for enjoyment" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin={'true'}
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Main>
-        <DynamicHeader />
-        <DynamicGrid />
+        <Container>
+          <h1>Random shapes</h1>
+          <DynamicGrid />
+        </Container>
       </Main>
     </>
   )
@@ -31,8 +38,15 @@ const Home = () => {
 
 const Main = styled.main`
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 90vh;
 `
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  `
 
 export default Home
