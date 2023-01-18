@@ -1,13 +1,10 @@
 import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+import { Constants } from '../../utils/constants'
 
-interface Props {
-  cellInner: number
-  cellWithBorder: number
-  cellWithBorders: number
+type Props = Constants & {
   children: ReactNode
   columns: number
-  gap: number
   rows: number
 }
 

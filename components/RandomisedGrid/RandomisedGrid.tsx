@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import styled from 'styled-components'
-import { useIsMobile } from '../../hooks/useIsMobile'
-import { desktop, mobile } from '../../utils/constants'
+import { useScreenSize } from '../../hooks/useScreenSize'
+import { breakpoints, getConstants } from '../../utils/constants'
 import {
   createShapePropablityArray,
   randomWithProbability
@@ -12,20 +12,24 @@ import Grid from '../Grid/Grid'
 import Item from '../Item/Item'
 
 const RandomisedGrid: FC = () => {
-  const isMobile = useIsMobile()
-  const shapes = getShapes(isMobile)
-  const constants = isMobile ? mobile : desktop
-  const { cells, ...rest } = constants
+  const screenSize = useScreenSize()
+  const device = screenSize.width < breakpoints.mobile ? 'desktop' : 'mobile'
+  const { ...rest } = getConstants(device)
+  const { border, cellWithBorder, cellWithBorders } = rest
 
-  const cellArray = Array.from({ length: cells }, (_, i) => i).map(
+  const rows = Math.floor((screenSize.height - 80) / cellWithBorder)
+  const columns = Math.floor((screenSize.width - 80) / cellWithBorder)
+
+  const shapes = getShapes(border, cellWithBorders)
+  const cellArray = Array.from({ length: rows * columns }, (_, i) => i).map(
     () => shapes[randomWithProbability(createShapePropablityArray(shapes))]
   )
 
   return (
-    <GridDiv {...rest}>
+    <GridDiv {...{ ...rest, columns, rows }}>
       {cellArray.map((i, index) => (
         <Cell key={`base-${index}`}>
-          <Item {...i.item} isFirstRow={index < rest.columns} />
+          <Item {...i.item} isFirstRow={index < columns} />
         </Cell>
       ))}
     </GridDiv>

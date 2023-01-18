@@ -6,9 +6,7 @@ export interface Shape {
   item: ItemProps
 }
 
-export const getShapes = (isMobile: boolean): Shape[] => {
-  const border = isMobile ? '2px' : '4px'
-  const cell = isMobile ? '26px' : '52px'
+export const getShapes = (border: number, cell: number): Shape[] => {
 
   return [
     {
@@ -21,12 +19,12 @@ export const getShapes = (isMobile: boolean): Shape[] => {
       probability: 2,
       item: {
         background: 'transparent',
-        borderWidth: `${border} ${border} 0 0`,
+        borderWidth: `${border}px ${border}px 0 0`,
         borderRadius: '0 90% 0 0',
-        marginLeft: `-${border}`,
-        marginTop: `-${border}`,
-        width: `${cell}`,
-        height: `${cell}`,
+        marginLeft: `-${border}px`,
+        marginTop: `-${border}px`,
+        width: `${cell}px`,
+        height: `${cell}px`,
         zIndex: '2',
       },
     },
@@ -35,12 +33,12 @@ export const getShapes = (isMobile: boolean): Shape[] => {
       probability: 1,
       item: {
         background: 'transparent',
-        borderWidth: `${border} 0 0 ${border}`,
+        borderWidth: `${border}px 0 0 ${border}px`,
         borderRadius: '90% 0 0 0',
-        marginLeft: `-${border}`,
-        marginTop: `-${border}`,
-        width: `${cell}`,
-        height: `${cell}`,
+        marginLeft: `-${border}px`,
+        marginTop: `-${border}px`,
+        width: `${cell}px`,
+        height: `${cell}px`,
         zIndex: '1',
       },
     },
@@ -50,11 +48,11 @@ export const getShapes = (isMobile: boolean): Shape[] => {
       item: {
         background: 'transparent',
         borderRadius: '0 0 90% 0',
-        borderWidth: `0 ${border} ${border} 0`,
-        marginLeft: `-${border}`,
-        marginTop: `-${border}`,
-        width: `${cell}`,
-        height: `${cell}`,
+        borderWidth: `0 ${border}px ${border}px 0`,
+        marginLeft: `-${border}px`,
+        marginTop: `-${border}px`,
+        width: `${cell}px`,
+        height: `${cell}px`,
         zIndex: '2',
       },
     },
@@ -64,11 +62,11 @@ export const getShapes = (isMobile: boolean): Shape[] => {
       item: {
         background: 'transparent',
         borderRadius: '0 0 0 90%',
-        borderWidth: `0 0 ${border} ${border}`,
-        marginLeft: `-${border}`,
-        marginTop: `-${border}`,
-        width: `${cell}`,
-        height: `${cell}`,
+        borderWidth: `0 0 ${border}px ${border}px`,
+        marginLeft: `-${border}px`,
+        marginTop: `-${border}px`,
+        width: `${cell}px`,
+        height: `${cell}px`,
         zIndex: '1',
       },
     },
@@ -77,11 +75,11 @@ export const getShapes = (isMobile: boolean): Shape[] => {
       probability: 4,
       item: {
         background: 'white',
-        borderWidth: `${border} 0`,
-        marginLeft: `-${border}`,
-        marginTop: `-${border}`,
-        width: `${cell}`,
-        height: `${cell}`,
+        borderWidth: `${border}px 0`,
+        marginLeft: `-${border}px`,
+        marginTop: `-${border}px`,
+        width: `${cell}px`,
+        height: `${cell}px`,
         zIndex: '0',
       },
     },

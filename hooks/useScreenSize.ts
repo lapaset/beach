@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
-import { MOBILE_BREAKPOINT } from '../utils/constants'
+import { useEffect, useState } from 'react';
 
-export const useIsMobile = () => {
+export const useScreenSize = (): { height: number; width: number } => {
   const [width, setWidth] = useState<number>(window.innerWidth)
+  const [height, setHeight] = useState<number>(window.innerHeight)
 
   const handleWindowSizeChange = () => {
     if (typeof window !== undefined) {
       setWidth(window.innerWidth)
+      setHeight(window.innerHeight)
     }
   }
 
@@ -19,5 +20,5 @@ export const useIsMobile = () => {
     }
   }, [])
 
-  return width <= MOBILE_BREAKPOINT
+  return { height, width }
 }

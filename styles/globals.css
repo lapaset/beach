@@ -15,7 +15,7 @@ body {
 
 h1 {
   font-size: 2em;
-  margin-bottom: 40px;
+  margin: 10px 0 30px;
   letter-spacing: 8px;
 }
 
@@ -23,10 +23,10 @@ body {
   background: white
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   h1 {
     font-size: 1.5em;
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 }
 
