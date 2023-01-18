@@ -13,7 +13,7 @@ import Item from '../Item/Item'
 
 const RandomisedGrid: FC = () => {
   const screenSize = useScreenSize()
-  const device = screenSize.width < breakpoints.mobile ? 'desktop' : 'mobile'
+  const device = screenSize.width < breakpoints.mobile ? 'mobile' : 'desktop'
   const { ...rest } = getConstants(device)
   const { border, cellWithBorder, cellWithBorders } = rest
 
