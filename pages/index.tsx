@@ -11,10 +11,10 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Beach</title>
+        <title>Shapes</title>
         <meta name="description" content="🌴 created for enjoyment" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="icon" href="favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
