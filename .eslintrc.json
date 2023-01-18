@@ -5,10 +5,8 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  "rules": {
-
-  },
+  "extends": ["plugin:@next/next/recommended"],
+  "rules": {},
   "env": {
     "browser": true,
     "es2021": true
