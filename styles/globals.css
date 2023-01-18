@@ -17,6 +17,7 @@ h1 {
   font-size: 2em;
   margin: 10px 0 30px;
   letter-spacing: 8px;
+  align-self: flex-start;
 }
 
 body {

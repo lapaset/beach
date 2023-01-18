@@ -13,12 +13,26 @@ import Item from '../Item/Item'
 
 const RandomisedGrid: FC = () => {
   const screenSize = useScreenSize()
-  const device = screenSize.width < breakpoints.mobile ? 'mobile' : 'desktop'
+  const device =
+    screenSize.width < breakpoints.mobile
+      ? 'mobile'
+      : screenSize.width < breakpoints.tablet
+      ? 'tablet'
+      : 'desktop'
+      
   const { ...rest } = getConstants(device)
-  const { border, cellWithBorder, cellWithBorders } = rest
+  const {
+    border,
+    cellWithBorder,
+    cellWithBorders,
+    horizontalMargin,
+    verticalMargin,
+  } = rest
 
-  const rows = Math.floor((screenSize.height - 80) / cellWithBorder)
-  const columns = Math.floor((screenSize.width - 80) / cellWithBorder)
+  const rows = Math.floor((screenSize.height - verticalMargin) / cellWithBorder)
+  const columns = Math.floor(
+    (screenSize.width - horizontalMargin) / cellWithBorder
+  )
 
   const shapes = getShapes(border, cellWithBorders)
   const cellArray = Array.from({ length: rows * columns }, (_, i) => i).map(
