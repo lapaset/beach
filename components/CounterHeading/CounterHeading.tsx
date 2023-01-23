@@ -33,40 +33,55 @@ const HeaderRow = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 8px;
+
+  @media only screen and (max-width: ${breakpoints.mobile}px) { 
+    & {
+      align-items: center;
+    }
+  }
 `
+
 const Button = styled.button`
   background: transparent;
+  color: black;
   padding: 8px 0;
   width: 196px;
   border: 4px solid transparent;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
   letter-spacing: 2px;
+  border-style: solid;
+  border-width: 4px;
+  color: black;
+  border-color: transparent;
+  transition: letter-spacing 0.5s, border 0.8s;
 
   &:hover {
-    border: 4px solid black;
+    border-color: black;
   }
 
   &:active {
-    border: 4px solid black;
+    border-color: black;
     letter-spacing: 4px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      color: white;
+    }
   }
 
   @media only screen and (max-width: ${breakpoints.mobile}px) {
     & {
       padding: 4px 8px;
       width: 80px;
-      border: 2px solid black;
+      border-width: 2px;
       font-size: 11px;
       letter-spacing: 1px;
-    }
-
-    &:hover {
-      border: 2px solid black;
+      border-color: black;
     }
 
     &:active {
-      border: 2px solid black;
       letter-spacing: 2px;
     }
   }
