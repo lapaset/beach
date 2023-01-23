@@ -34,10 +34,14 @@ const HeaderRow = styled.div`
   align-items: baseline;
   margin-bottom: 8px;
 
-  @media only screen and (max-width: ${breakpoints.mobile}px) { 
+  @media only screen and (max-width: ${breakpoints.mobile}px) {
     & {
       align-items: center;
     }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
   }
 `
 
@@ -49,7 +53,7 @@ const Button = styled.button`
   border: 4px solid transparent;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   border-style: solid;
   border-width: 4px;
   color: black;
@@ -62,12 +66,17 @@ const Button = styled.button`
 
   &:active {
     border-color: black;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
   }
 
   @media (prefers-color-scheme: dark) {
     & {
       color: white;
+    }
+
+    &:active,
+    &:hover {
+      border-color: white;
     }
   }
 
@@ -83,6 +92,11 @@ const Button = styled.button`
 
     &:active {
       letter-spacing: 2px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border-color: white;
+      color: white;
     }
   }
 `
