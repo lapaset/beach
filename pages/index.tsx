@@ -1,12 +1,32 @@
+import countapi from 'countapi-js'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const Home = () => {
+  const [visitCount, setVisitCount] = useState<number | undefined>(undefined)
+  const isBrowser = typeof window !== undefined
+
+  const DynamicCounterHeader = dynamic(
+    () => import('../components/CounterHeading/CounterHeading'),
+    { ssr: false }
+  )
+
   const DynamicGrid = dynamic(
     () => import('../components/RandomisedGrid/RandomisedGrid'),
     { ssr: false }
   )
+
+  useEffect(() => {
+    const countVisits = async () => {
+      const visits = await countapi.visits()
+      setVisitCount(visits.value)
+    }
+    if (isBrowser) {
+      countVisits()
+    }
+  }, [])
 
   return (
     <>
@@ -23,10 +43,14 @@ const Home = () => {
         />
       </Head>
       <Main>
-        <Container>
-          <h1>Random shapes</h1>
-          <DynamicGrid />
-        </Container>
+        {visitCount && (
+          <>
+            <Container>
+              <DynamicCounterHeader visits={visitCount}/>
+              <DynamicGrid />
+            </Container>
+          </>
+        )}
       </Main>
     </>
   )
