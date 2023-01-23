@@ -11,19 +11,19 @@ const constants = {
     border: 2,
     cellInner: 22,
     horizontalMargin: 80,
-    verticalMargin: 80,
+    verticalMargin: 150,
   },
   tablet: {
     border: 4,
     cellInner: 44,
     horizontalMargin: 160,
-    verticalMargin: 80,
+    verticalMargin: 150,
   },
   desktop: {
     border: 4,
     cellInner: 44,
-    horizontalMargin: 400,
-    verticalMargin: 80,
+    horizontalMargin: 500,
+    verticalMargin: 150,
   },
 }
 
