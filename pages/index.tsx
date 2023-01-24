@@ -42,16 +42,17 @@ const Home = () => {
           crossOrigin={'true'}
         />
       </Head>
-      <Main>
-        {visitCount && (
-          <>
-            <Container>
-              <DynamicCounterHeader visits={visitCount}/>
-              <DynamicGrid />
-            </Container>
-          </>
-        )}
-      </Main>
+      {visitCount && (
+        <Main>
+          <Container>
+            <DynamicCounterHeader visits={visitCount} />
+            <DynamicGrid />
+          </Container>
+        </Main>
+      )}
+      <Footer>
+
+      </Footer>
     </>
   )
 }
@@ -68,6 +69,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`
+
+const Footer = styled.p`
+
 `
 
 export default Home
