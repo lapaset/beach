@@ -44,7 +44,7 @@ a {
     background: black
   }
 
-  a {
+  a, p {
     color: white;
   }
 }
