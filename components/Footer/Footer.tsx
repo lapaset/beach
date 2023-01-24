@@ -8,7 +8,7 @@ const Footer = () => (
       Liisa Lahti
     </a>{' '}
     (they/them) based on artwork by{' '}
-    <a href="https://www.ollikilpi.com/" title="Olli's portfolio">
+    <a href="https://www.instagram.com/motionnotes/" title="Olli's portfolio">
       Olli Kilpi
     </a>{' '}
     (he/him)
