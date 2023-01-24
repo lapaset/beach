@@ -52,6 +52,7 @@ const Button = styled.button`
   width: 196px;
   border: 4px solid transparent;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 1.5em;
   letter-spacing: 4px;
   border-style: solid;

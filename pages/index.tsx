@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import Footer from '../components/Footer/Footer'
 
 const Home = () => {
   const [visitCount, setVisitCount] = useState<number | undefined>(undefined)
@@ -50,9 +51,7 @@ const Home = () => {
           </Container>
         </Main>
       )}
-      <Footer>
-
-      </Footer>
+      <Footer />
     </>
   )
 }
@@ -69,10 +68,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-
-const Footer = styled.p`
-
 `
 
 export default Home
